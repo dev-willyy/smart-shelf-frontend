@@ -6,7 +6,9 @@ import { showLoader, hideLoader } from './app.js';
  * analyzeSpoilage() - calls the backend to predict expiry/spoilage.
  */
 export function analyzeSpoilage(payload) {
-  return fetch('https://smart-shelf-backend.onrender.com/api/predict-expiry', {
+  // This backend URL: 'https://smart-shelf-backend.onrender.com/api/predict-expiry' is currently down
+  // So the alternate URL is used as seen below:
+  return fetch('https://smart-shelf-api-edgn.onrender.com/api/predict-expiry', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
