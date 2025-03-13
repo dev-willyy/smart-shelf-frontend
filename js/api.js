@@ -5,7 +5,7 @@ import { checkFinlandDefaults } from './finlandDefaults.js';
  * analyzeSpoilage() - calls the backend to predict expiry/spoilage.
  */
 export function analyzeSpoilage(payload) {
-  return fetch('http://localhost:5000/api/predict-expiry', {
+  return fetch('https://smart-shelf-api-edgn.onrender.com/api/predict-expiry', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
