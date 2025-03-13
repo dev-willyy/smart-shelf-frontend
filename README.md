@@ -19,13 +19,13 @@ This is a simple web app to **scan a product barcode** and **estimate spoilage**
 ## Project Structure
 
 frontend/
-├── index.html # Landing page
-├── scanning.html # Barcode scanning page
-├── styles.css # Basic styling
-├── js/
-│ ├── app.js # Main initialization
-│ ├── scanner.js # QuaggaJS camera scanning logic
-│ ├── finlandDefaults.js # Offers default conditions if none provided
+├── index.html # Landing page  
+├── scanning.html # Barcode scanning page  
+├── styles.css # Basic styling  
+├── js/  
+│ ├── app.js # Main initialization  
+│ ├── scanner.js # QuaggaJS camera scanning logic  
+│ ├── finlandDefaults.js # Offers default conditions if none provided  
 └─└── api.js # Calls the back end
 
 ## Tips & Notes
