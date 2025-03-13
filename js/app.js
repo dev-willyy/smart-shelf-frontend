@@ -12,3 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     initScanner();
   }
 });
+
+/**
+ * Displays the loader overlay.
+ */
+export function showLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.remove('hidden');
+  }
+}
+
+/**
+ * Hides the loader overlay.
+ */
+export function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.add('hidden');
+  }
+}

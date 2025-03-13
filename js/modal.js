@@ -8,7 +8,7 @@ export function showModal(content) {
 export function bindModalEvents() {
   const modal = document.getElementById('resultModal');
   const closeBtn = document.getElementById('modalClose');
-  closeBtn.addEventListener('click', () => {
+  closeBtn?.addEventListener('click', () => {
     modal.style.display = 'none';
   });
   window.addEventListener('click', (event) => {

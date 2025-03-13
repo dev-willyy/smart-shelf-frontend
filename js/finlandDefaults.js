@@ -1,4 +1,4 @@
-export function checkFinlandDefaults() {
+export function checkFinlandDefaults(onSuccess) {
   const tempInput = document.getElementById('tempInput');
   const humidityInput = document.getElementById('humidityInput');
   const finlandModal = document.getElementById('finlandModal');
@@ -9,23 +9,39 @@ export function checkFinlandDefaults() {
   const FINLAND_DEFAULT_TEMP = 5;
   const FINLAND_DEFAULT_HUMIDITY = 40;
 
+  // If storage conditions are already set, immediately invoke the callback.
   if (tempInput.value.trim() && humidityInput.value.trim()) {
+    onSuccess();
     return;
   }
 
   finlandModal.style.display = 'block';
 
-  acceptBtn.addEventListener('click', () => {
+  // Define a helper to close the modal, remove listeners, and call the callback.
+  const closeModalAndProceed = () => {
+    finlandModal.style.display = 'none';
+    acceptBtn.removeEventListener('click', onAccept);
+    rejectBtn.removeEventListener('click', onReject);
+    closeBtn.removeEventListener('click', onClose);
+    onSuccess();
+  };
+
+  // Define event handlers.
+  const onAccept = () => {
     tempInput.value = FINLAND_DEFAULT_TEMP;
     humidityInput.value = FINLAND_DEFAULT_HUMIDITY;
-    finlandModal.style.display = 'none';
-  });
+    closeModalAndProceed();
+  };
 
-  rejectBtn.addEventListener('click', () => {
-    finlandModal.style.display = 'none';
-  });
+  const onReject = () => {
+    closeModalAndProceed();
+  };
 
-  closeBtn.addEventListener('click', () => {
-    finlandModal.style.display = 'none';
-  });
+  const onClose = () => {
+    closeModalAndProceed();
+  };
+
+  acceptBtn.addEventListener('click', onAccept);
+  rejectBtn.addEventListener('click', onReject);
+  closeBtn.addEventListener('click', onClose);
 }
