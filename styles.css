@@ -1,0 +1,235 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+}
+.site-header h1 {
+  font-size: 2rem;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.nav a:hover,
+.nav a.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Landing Page */
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 140px);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 8rem;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-button {
+  display: inline-block;
+  background: #4ca1af;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.cta-button:hover {
+  background: #2c3e50;
+}
+
+/* Scanning Page & Cards */
+.scanning-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 8rem;
+  gap: 2rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+.card h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+.viewport {
+  width: 100%;
+  height: 300px;
+  background: #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.primary-btn,
+.secondary-btn {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.primary-btn {
+  background: #4ca1af;
+  color: #fff;
+}
+.primary-btn:hover {
+  background: #2c3e50;
+}
+.secondary-btn {
+  background: #ccc;
+  color: #333;
+}
+.secondary-btn:hover {
+  background: #aaa;
+}
+
+/* Form */
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+}
+
+.viewport {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  background: #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Force the Quagga-injected <video> and <canvas> to fit within .viewport */
+.viewport video,
+.viewport canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer {
+  background: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .landing-container {
+    margin-top: 5rem;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .card {
+    width: 90%;
+  }
+}
