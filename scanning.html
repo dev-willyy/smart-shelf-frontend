@@ -23,6 +23,7 @@
       <section class="card scanner-card">
         <h2>Scan Product Barcode</h2>
         <div id="interactive" class="viewport"></div>
+        <canvas id="snapshotCanvas" width="275" height="240"></canvas>
         <p>Detected Barcode: <span id="detectedBarcode">N/A</span></p>
         <div class="button-group">
           <button id="startScannerBtn" class="primary-btn">Start Scanner</button>
@@ -34,9 +35,9 @@
         <h2>Enter Storage Conditions</h2>
         <form id="conditionsForm">
           <label for="tempInput">Temperature (°C):</label>
-          <input type="number" id="tempInput" placeholder="e.g., 5" required />
+          <input type="number" id="tempInput" placeholder="e.g., 5" />
           <label for="humidityInput">Humidity (%):</label>
-          <input type="number" id="humidityInput" placeholder="e.g., 40" required />
+          <input type="number" id="humidityInput" placeholder="e.g., 40" />
           <button type="submit" class="primary-btn">Analyze Spoilage Duration</button>
         </form>
       </section>
@@ -47,6 +48,20 @@
       <div class="modal-content">
         <span id="modalClose" class="close">&times;</span>
         <div id="resultContent"></div>
+      </div>
+    </div>
+
+    <!-- Finland Defaults Modal -->
+    <div id="finlandModal" class="modal">
+      <div class="modal-content">
+        <span id="finlandModalClose" class="close">&times;</span>
+        <h2>Default Finland Storage Conditions</h2>
+        <p>We recommend <b>5°C</b> and <b>40%</b> humidity based on typical Finnish conditions.</p>
+        <p>Would you like to use these defaults?</p>
+        <div class="button-group">
+          <button id="acceptDefaultsBtn" class="primary-btn">Accept</button>
+          <button id="rejectDefaultsBtn" class="secondary-btn">Reject</button>
+        </div>
       </div>
     </div>
 

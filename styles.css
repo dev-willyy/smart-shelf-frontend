@@ -157,6 +157,13 @@ form input {
   border-radius: 4px;
 }
 
+#snapshotCanvas {
+  /* width: 300px; */
+  /* height: 420px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 /* Modal Styles */
 .modal {
   display: none;
