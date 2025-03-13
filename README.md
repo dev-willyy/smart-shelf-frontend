@@ -18,7 +18,7 @@ This is a simple web app to **scan a product barcode** and **estimate spoilage**
 
 ## Project Structure
 
-frontend/
+frontend/  
 ├── index.html # Landing page  
 ├── scanning.html # Barcode scanning page  
 ├── styles.css # Basic styling  
