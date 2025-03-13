@@ -7,7 +7,9 @@ import { checkFinlandDefaults } from './finlandDefaults.js';
 export function analyzeSpoilage(payload) {
   return fetch('https://smart-shelf-api-edgn.onrender.com/api/predict-expiry', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
